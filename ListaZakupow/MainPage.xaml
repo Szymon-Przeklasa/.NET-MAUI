@@ -5,11 +5,11 @@
 
     <Grid HorizontalOptions="Center" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*" WidthRequest="300" HeightRequest="700" VerticalOptions="Start">
         <Label Text="ShoppingList" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalTextAlignment="Center" FontSize="22"></Label>
-        <Entry x:Name="item" WidthRequest="170" HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="RoyalBlue" TextColor="White"></Entry>
+        <Entry x:Name="additem" WidthRequest="170" HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="RoyalBlue" TextColor="White"></Entry>
         <Button Clicked="AddBtn_Clicked" Text="Add" WidthRequest="80" HeightRequest="50" Grid.Column="2" Grid.Row="1" FontSize="18"></Button>
-        <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="RoyalBlue">
+        <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="RoyalBlue" x:Name="listview">
             <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}" x:Name="lista">
+                <x:Array Type="{x:Type x:String}">
                     
                 </x:Array>
             </CollectionView.ItemsSource>
