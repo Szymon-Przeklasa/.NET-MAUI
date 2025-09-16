@@ -15,8 +15,22 @@ namespace MauiApp2
         private void AddBtn_Clicked(object sender, EventArgs e)
         {
             string itemname = additem.Text;
+            if (string.IsNullOrEmpty(itemname))
+                return;
             additem.Text = "";
-            Products.Add(new Item { Name = itemname, Quantity = 1 });
+            var existing = Products.FirstOrDefault(p => p.Name.Equals(itemname, StringComparison.OrdinalIgnoreCase));
+
+            if (existing != null)
+            {
+                existing.Quantity++;
+                Products.Remove(existing);
+                Products.Add(existing);
+            }
+            else
+            {
+                Products.Add(new Item { Name = itemname, Quantity = 1 });
+            }
+
             collectionview.ItemsSource = Products;
         }
 
