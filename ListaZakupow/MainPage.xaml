@@ -5,16 +5,19 @@
 
     <Grid HorizontalOptions="Center" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*" WidthRequest="300" HeightRequest="700" VerticalOptions="Start">
         <Label Text="ShoppingList" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalTextAlignment="Center" FontSize="22"></Label>
-        <Entry x:Name="additem" WidthRequest="170" HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="RoyalBlue" TextColor="White"></Entry>
-        <Button Clicked="AddBtn_Clicked" Text="Add" WidthRequest="80" HeightRequest="50" Grid.Column="2" Grid.Row="1" FontSize="18"></Button>
-        <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="RoyalBlue" x:Name="listview">
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    
-                </x:Array>
-            </CollectionView.ItemsSource>
+        <Entry x:Name="additem" WidthRequest="170" HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="LightGray" TextColor="White"></Entry>
+        <Button Clicked="AddBtn_Clicked" Text="Add" WidthRequest="90" HeightRequest="50" Grid.Column="2" Grid.Row="1" FontSize="18" BorderColor="Black"></Button>
+        <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="LightGray" x:Name="collectionview" ItemsSource="{Binding Products}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="{Binding Name}"></Label>
+                        <Label Text="{Binding Quantity}"></Label>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Clicked="DelBtn_Clicked" Text="Delete" WidthRequest="100" HeightRequest="50" Grid.Column="2" Grid.Row="4" FontSize="18"></Button>
+        <Button Clicked="DelBtn_Clicked" Text="Delete" WidthRequest="90" HeightRequest="50" Grid.Column="2" Grid.Row="4" FontSize="18" BorderColor="Black"></Button>
     </Grid>
 
 </ContentPage>
