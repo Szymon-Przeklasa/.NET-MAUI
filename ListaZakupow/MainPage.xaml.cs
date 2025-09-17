@@ -36,7 +36,8 @@ namespace MauiApp2
 
         private void DelBtn_Clicked(object sender, EventArgs e)
         {
-
+            var selected = collectionview.SelectedItem;
+            Products.Remove((Item)selected);
         }
     }
 }

@@ -7,10 +7,10 @@
         <Label Text="ShoppingList" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalTextAlignment="Center" FontSize="22"></Label>
         <Entry x:Name="additem" WidthRequest="170" HeightRequest="50" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="LightGray" TextColor="White"></Entry>
         <Button Clicked="AddBtn_Clicked" Text="Add" WidthRequest="90" HeightRequest="50" Grid.Column="2" Grid.Row="1" FontSize="18" BorderColor="Black"></Button>
-        <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="LightGray" x:Name="collectionview" ItemsSource="{Binding Products}">
+        <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="LightGray" x:Name="collectionview" ItemsSource="{Binding Products}" SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="*,Auto" Padding="10">
+                    <Grid ColumnDefinitions="*,*" Padding="10">
                         <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
                         <Label Grid.Column="1" Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="End" />
                     </Grid>
