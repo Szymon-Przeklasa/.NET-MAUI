@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TODOList.AddTask"
+             Title="AddTask"
+             Background="#AEC3B0">
+    <ContentPage.Resources>
+        <Style x:Key="add_btn" TargetType="Button">
+            <Setter Property="Background" Value="#D9D9D9"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="BorderWidth" Value="0.5"/>
+            <Setter Property="BorderColor" Value="Black"/>
+        </Style>
+        <Style x:Key="small" TargetType="Label">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="3,2,0,0"/>
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout Spacing="5">
+        <Label Text="Name:" Style="{StaticResource small}"/>
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" x:Name="task_entry" />
+        <Label Text="Description:" Style="{StaticResource small}"/>
+        <Entry Grid.Column="0" Grid.ColumnSpan="2" x:Name="description"/>
+        <Button Text="Add Task" Grid.Column="2"  Clicked="addBtn_Clicked" Style="{StaticResource add_btn}" Margin="10,0,10,0"/>
+    </VerticalStackLayout>
+</ContentPage>
